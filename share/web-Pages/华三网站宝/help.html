@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>华三网站宝-帮助信息</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" type="text/css">
+    <style>
+        * {
+            font-family: "微软雅黑", "Lucida Grande", Helvetica, Arial, sans-serif, "宋体";
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">帮助信息</h3>
+            </div>
+            <div class="panel-body">
+                <p>欢迎使用华三网站宝！</p>
+                <p>本页面旨在提供最方便全面的常用网站聚合，提供导航便利，轻松工作。</p>
+                <p>您可以将html文件的快捷方式放在桌面上，或者把这个地址加到浏览器的收藏夹。<br>设置为浏览器首页更方便^_^</p>
+                <li>
+                    如何添加自定义网址
+                </li>
+                <p>在文件根目录下打开bookMarks.js,可以通过编辑器对该文件进行编辑。只需要在数组中添加如下格式的数据，即可添加一条新的网址到你的页面上。</p>
+                <pre>
+                    ,(逗号记得加哦)
+                    {
+                        name: "H3C官网",    
+                        Url: "http://www.h3c.com",  
+                        image: "statics/1.jpg", 
+                        type: "其他网站",   
+                        weight: 0   
+                    }
+
+                    属性解释：
+                    name// 网站的名字
+                    Url// 网站的链接
+                    image// （可选）图片链接，可以不填写，会用默认图片替代。
+                    type// （可选）网站分类（不写该项默认分类到“其他网站”）
+                    weight// 权重，代表该网站的使用频率。
+                </pre>
+                <br>
+                <li>
+                    反馈方式
+                </li>
+                <p>如果聪明的你发现页面有Bug，或者有好的想法和建议，欢迎到论坛分享你的看法！
+                    <br> 帖子的地址：
+                    <a target="view_window" href="http://rdbbs/forum.php?mod=viewthread&tid=7561&extra=">
+                        http://rdbbs/forum.php?mod=viewthread&tid=7561&extra=
+                    </a>
+                </p>
+
+
+                <li>联系我们</li>
+                <p>WEBER组都是一群有趣的年轻人，爱搞技术也爱生活。不仅精通web/node，<s>更擅长养鱼，我们立志打造华三水族馆。</s>
+                <br>总之我们喜欢探索新鲜的事物，欢迎来撩^_^</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2"></div>
+
+</body>
+
+</html>

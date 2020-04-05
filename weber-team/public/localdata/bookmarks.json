@@ -1,0 +1,84 @@
+{
+    "bookMarkList":[
+        {"name":"Press",
+         "URL":"http://press/",
+         "class":"",
+         "usual": true
+        },
+        {"name":"tech.h3c.com",
+         "URL":"http://tech.h3c.com/",
+         "class":"",
+         "usual": true
+        },
+        {"name":"WebApi",
+         "URL":"http://sft/info/webapi/",
+         "class":"often",
+         "usual": true
+        },
+        {"name":"NETCONF文档大全",
+         "URL":"http://10.153.120.98/Leopard-SOFT-COMMON-Document/DOCUMENT/NETCONF%E6%96%87%E6%A1%A3/trunk/",
+         "class":"often",
+         "usual": true
+        },
+        {"name":"无线局域网论坛",
+         "URL":"http://rdbbs/forum.php?mod=forumdisplay&action=list&fid=185",
+         "class":"",
+         "usual": true
+        },
+        {"name":"idata版本传递系统",
+         "URL":"http://idata/",
+         "class":""
+        },
+        {"name":"software",
+         "URL":"http://software.h3c.com/",
+         "class":""
+        },
+        {"name":"H3C负责人",
+         "URL":"http://sft/info/",
+         "class":""
+        },
+        {"name":"云虚机02",
+         "URL":"http://webrds02.h3c.com/Citrix/XenApp/clientDetection/downloadNative.aspx",
+         "class":""
+        },
+        {"name":"云虚机03",
+         "URL":"http://webrds03.h3c.com/Citrix/XenApp/clientDetection/downloadNative.aspx",
+         "class":""
+        },
+        {"name":"jenkinsV7board",
+         "URL":"http://10.153.3.69:8080/jenkins/viewboard/",
+         "class":""
+        },
+        {"name":"pal.h3c.com",
+         "URL":"http://pal.h3c.com/",
+         "class":""
+        },
+        {"name":"admp.h3c.com (可以换lync头像)",
+         "URL":"http://admp.h3c.com/",
+         "class":""
+        },
+        {"name":"09-01-H3C图标库",
+         "URL":"file://h3c-infoserver/09-01-H3C%E5%9B%BE%E6%A0%87%E5%BA%93/icons/%E7%94%A8%E4%BA%8EPPT%E5%88%B6%E5%9B%BE/",
+         "class":""
+        },
+        {"name":"H3C大讲堂",
+         "URL":"http://lms.h3c.com/lds/sys_login.do",
+         "class":""
+        },
+        {"name":"版本发布验证",
+         "URL":"http://10.154.243.143:3000/wlan",
+         "class":"",
+         "usual": true
+        },
+        {"name":"是男人就坚持30秒",
+         "URL":"http://qkf4859/eggs/30sman.html",
+         "class":"",
+         "usual": ""
+        },
+        {"name":"打字游戏",
+         "URL":"http://qkf4859/eggs/wordFighter/index.html",
+         "class":"",
+         "usual": ""
+        }
+    ]
+}

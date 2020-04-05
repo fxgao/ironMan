@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H3C网站宝</title>
+    <style>
+        .btn.btn-default.btn-back-color {
+            color: black!important;
+            box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.288)!important;
+        }
+
+        * {
+            font-family: "微软雅黑", "Lucida Grande", Helvetica, Arial, sans-serif, "宋体";
+        }
+
+        .headerline {
+            border-image: linear-gradient(90deg, rgba(255, 152, 18, 0.74), blue) 30 30;
+            border-top: 0
+        }
+
+        .full-back-ground {
+            background: linear-gradient(45deg, rgb(217, 237, 247), white)
+        }
+
+        .list-group-item {
+            background-color: rgba(255, 152, 18, 0)!important;
+            border: none!important;
+        }
+
+        .list-group-item:hover {
+            background-color: rgba(99, 178, 252, 0.322)!important
+        }
+
+        #contant.a {
+            background-color: rgba(99, 178, 252, 0.322)!important
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" type="text/css">
+
+    <script type="text/javascript" src="lib/jquery.min1.11.js"></script>
+    <script type="text/javascript" src="lib/respond.js"></script>
+    <script type="text/javascript" src="lib/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-1 col-md-1 col-sm-1" id="nav" style="overflow: hidden;">
+
+            <br>
+            <div class="" style="position: fixed">
+                <h4 class="page-header headerline">导航栏</h4>
+                <br>
+                <div class="list-group" id="navigater">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-10">
+            <div id="contant" style="margin-left: 20px">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <p id="endInfo">更多信息请点击“帮助”</p> -->
+    <div class="col-xs-1"></div>
+    <div class="alert alert-info col-xs-5">
+        <span style="font-weight: bold">ie浏览器</span>会阻止脚本内容，请点击顶部的提示，并允许被阻止的内容。
+        <br>
+        <br> 为了获得更好的用户体验，向您推荐
+        <a href="http://sft/info/browsers/chrome/chrome43.0.2357.124_chrome64_installer.exe" class="alert-link">Chrome浏览器</a>
+        ，以及
+        <a href="http://sft/info/browsers/firefox/Firefox_Setup_35.0.1.exe" class="alert-link">fireFox浏览器</a>
+        。
+    </div>
+    <div class="col-xs-1"></div>
+    <div class="alert alert-info col-xs-4">
+        <br>
+        想对该页面了解更多，获得更多帮助，请点击
+        <a href="help.html" target="_blank" class="alert-link">帮助</a>
+        <br><br>
+    </div>
+
+
+
+
+    <!-- 脚本区域 -->
+    <script type="text/javascript" src="bookMarks.js"></script>
+    <script>
+        // 已加载了bookMarks
+        $(function () {
+            var bookMarkMap = {};
+            var typeWeightMap = {};
+
+            $.each(bookMarks, function (index, webSite) {
+                webSite.type = webSite.type || undefined;
+                var typeArr = bookMarkMap[webSite.type] || undefined;
+                if (!typeArr) {
+                    typeArr = bookMarkMap[webSite.type] = [];
+                    typeWeightMap[webSite.type] = 0;
+                }
+                typeArr.push(webSite);
+                typeWeightMap[webSite.type] += webSite.weight || 0;
+            })
+            var bookMarkArray = []
+            for (var type in bookMarkMap) {
+                if (bookMarkMap.hasOwnProperty(type)) {
+                    var oneList = bookMarkMap[type];
+                    bookMarkArray.push({
+                        type: type,
+                        List: oneList,
+                        weight: typeWeightMap[type]
+                    })
+                }
+            }
+            bookMarkArray.sort(function (a, b) {
+                return a.weight > b.weight ? -1 : 1;
+            })
+
+            var BlockStr = '';
+            var navStr = '';
+            for (var i = 0; i < bookMarkArray.length; i++) {
+                var oneType = bookMarkArray[i] || "其他网站";
+                BlockStr += '<br><h4 class="page-header col-xs-12 headerline" ' + 'id="' + oneType.type + '">' + oneType.type + '</h4>';
+                navStr += '<a href="#' + oneType.type + '" class="list-group-item locPicker">' + oneType.type + '</a>';
+                for (var j = 0; j < oneType.List.length; j++) {
+                    var Site = {
+                        name: "未知",
+                        Url: "http://www.h3c.com",
+                        image: "http://h3c.com/cn/tres/WebUI/images/H3C_ITnew_04.jpg",
+                        type: "其他网站",
+                        weight: 1
+                    }
+                    $.extend(Site, oneType.List[j]);
+                    // Site.image = Site.image || './statics/1.jpg';
+                    BlockStr += '<div class="col-md-2 col-sm-4 col-xs-2">' +
+                        '<a href="' + Site.Url + '" target="_blank" class="btn btn-default btn-back-color" style="margin:15px; background-color:rgba(159, 159, 159, 0.2)">' +
+                        '<img class="lazy" alt="" width="140" height="70" data-original="' + Site.image + '" />' +
+                        '<p style="margin: 0">' + Site.name + '</p>' +
+                        '</a>' +
+                        '</div>'
+                }
+            }
+            $("#contant").prepend(BlockStr);
+            $("#navigater").prepend(navStr);
+            $("body").addClass("full-back-ground");
+
+            // 开始加载图片
+            $("img.lazy").lazyload({
+                effect: 'fadeIn',
+                threshold: 200
+            });
+
+            // 初始化导航栏，绑定平滑滚动事件。
+            $("a.locPicker").on("click", function () {
+                var jEle = $($(this).attr("href"));
+                $("h4").css({
+                    color: "#000",
+                    "font-weight": "normal"
+                })
+                jEle.css({
+                    color: "#ff6666",
+                    "font-weight": "bold"
+                })
+                $("html, body").animate({
+                    scrollTop: jEle.offset().top + "px"
+                },
+                    {
+                        duration: 300,
+                        easing: "swing"
+                    }
+                );
+                return false;
+            });
+
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>
